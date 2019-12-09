@@ -1,0 +1,132 @@
+﻿<Page
+    x:Class="SimpleM.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SimpleM"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0">
+            <RelativePanel Background="DarkGray">
+                <Button Name="MenuButton"
+                        Width="50"
+                        Height="50"
+                        Content="&#xE700;"
+                        FontFamily="{StaticResource SymbolThemeFontFamily}"
+                        />
+                <TextBlock Text="首页"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           RelativePanel.RightOf="MenuButton"
+                           RelativePanel.AlignVerticalCenterWithPanel="True"
+                           Margin="15,0,0,0"
+                           />
+                <Button Name="NextBtn"
+                      Width="50"
+                      Height="50"
+                      Content="&#xE26B;"
+                      FontFamily="{StaticResource SymbolThemeFontFamily}"
+                           RelativePanel.AlignRightWithPanel="True"
+                        
+                      />
+                <Button Name="BackBtn"
+                      Width="50"
+                      Height="50"
+                      Content="&#xE26C;"
+                        
+                      FontFamily="{StaticResource SymbolThemeFontFamily}"
+                        
+                           RelativePanel.AlignVerticalCenterWithPanel="True"
+                        RelativePanel.LeftOf="NextBtn"
+                      />
+            </RelativePanel>
+        </Grid>
+
+        <Grid  Grid.Column="1"  >
+            <TextBlock>
+                <Run>一</Run>
+                <LineBreak/>
+                <Run>二</Run>
+                <LineBreak/>
+                <Run>三</Run>
+            </TextBlock>
+            <TextBlock Name="speedText" Grid.Row="0" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Top">hello world</TextBlock>
+        </Grid>
+
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <MediaPlayerElement  Grid.Row="1" Grid.Column="0" Name="mediaPlayer" AutoPlay="True" Visibility="Visible" AreTransportControlsEnabled="True"  />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Grid.Row="0" Grid.Column="0" Width="50" Height="50" Fill="Red" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+            <Rectangle Grid.Row="0" Grid.Column="1" Width="50" Height="50" Fill="LimeGreen" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Width="50" Height="50" Fill="DodgerBlue" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+            <Rectangle Grid.Row="1" Grid.Column="1" Width="50" Height="50" Fill="Orange" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <StackPanel>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+                <Button/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="0">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="chooseFileBtn" Content="Choose file" Click="OpenBtn_Click"/>
+                <Button x:Name="AddPlaybackRate" Content="AddPlaybackRate" Click="AddPlaybackRate_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="InitPlaybackRate" Content="InitPlaybackRate" Click="InitPlaybackRate_Click" HorizontalAlignment="Center"/>
+                <Button x:Name="ReducePlaybackRate" Content="ReducePlaybackRate" Click="ReducePlaybackRate_Click" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="2" Grid.Column="1">
+            <TextBlock VerticalAlignment="Center"> Text</TextBlock>
+            <Grid HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Ellipse Grid.Column="0" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+                <Ellipse Grid.Column="1" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+                <Ellipse Grid.Column="2" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+                <Ellipse Grid.Column="3" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+                <Ellipse Grid.Column="4" Fill="Black" Margin="0,0,5,0" Width="30" Height="30"/>
+                <Ellipse Grid.Column="5" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
