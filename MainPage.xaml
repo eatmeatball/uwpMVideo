@@ -5,128 +5,109 @@
     xmlns:local="using:SimpleM"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="Button" x:Name="btn27">
+            <Setter Property="FontSize" Value="27"/>
+        </Style>
+        <Style TargetType="Button" x:Name="BlackButtonStyle" BasedOn="{StaticResource btn27}">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+        </Style>
+    </Page.Resources>
 
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="8*"/>
-            <RowDefinition Height="1*"/>
-        </Grid.RowDefinitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0" Grid.Column="0">
-            <RelativePanel Background="DarkGray">
-                <Button Name="MenuButton"
-                        Width="50"
-                        Height="50"
-                        Content="&#xE700;"
-                        FontFamily="{StaticResource SymbolThemeFontFamily}"
-                        />
-                <TextBlock Text="首页"
-                           FontSize="20"
-                           FontWeight="Bold"
-                           RelativePanel.RightOf="MenuButton"
-                           RelativePanel.AlignVerticalCenterWithPanel="True"
-                           Margin="15,0,0,0"
-                           />
-                <Button Name="NextBtn"
-                      Width="50"
-                      Height="50"
-                      Content="&#xE26B;"
-                      FontFamily="{StaticResource SymbolThemeFontFamily}"
-                           RelativePanel.AlignRightWithPanel="True"
-                        
-                      />
-                <Button Name="BackBtn"
-                      Width="50"
-                      Height="50"
-                      Content="&#xE26C;"
-                        
-                      FontFamily="{StaticResource SymbolThemeFontFamily}"
-                        
-                           RelativePanel.AlignVerticalCenterWithPanel="True"
-                        RelativePanel.LeftOf="NextBtn"
-                      />
-            </RelativePanel>
-        </Grid>
-
-        <Grid  Grid.Column="1"  >
-            <TextBlock>
-                <Run>一</Run>
-                <LineBreak/>
-                <Run>二</Run>
-                <LineBreak/>
-                <Run>三</Run>
-            </TextBlock>
-            <TextBlock Name="speedText" Grid.Row="0" FontSize="30" FontWeight="Black" HorizontalAlignment="Left" VerticalAlignment="Top">hello world</TextBlock>
-        </Grid>
-
-
-        <Grid Grid.Row="1" Grid.Column="0">
-            <MediaPlayerElement  Grid.Row="1" Grid.Column="0" Name="mediaPlayer" AutoPlay="True" Visibility="Visible" AreTransportControlsEnabled="True"  />
-        </Grid>
-
-        <Grid Grid.Row="1" Grid.Column="1">
+        <Grid Grid.Row="0">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="9.5*"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Width="50" Height="50" Fill="Red" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
-            <Rectangle Grid.Row="0" Grid.Column="1" Width="50" Height="50" Fill="LimeGreen" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
-            <Rectangle Grid.Row="1" Grid.Column="0" Width="50" Height="50" Fill="DodgerBlue" HorizontalAlignment="Right" VerticalAlignment="Top"/>
-            <Rectangle Grid.Row="1" Grid.Column="1" Width="50" Height="50" Fill="Orange" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-            <StackPanel>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-                <Button/>
-            </StackPanel>
-        </Grid>
 
-        <Grid Grid.Row="2" Grid.Column="0">
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="chooseFileBtn" Content="Choose file" Click="OpenBtn_Click"/>
-                <Button x:Name="AddPlaybackRate" Content="AddPlaybackRate" Click="AddPlaybackRate_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="InitPlaybackRate" Content="InitPlaybackRate" Click="InitPlaybackRate_Click" HorizontalAlignment="Center"/>
-                <Button x:Name="ReducePlaybackRate" Content="ReducePlaybackRate" Click="ReducePlaybackRate_Click" HorizontalAlignment="Right"/>
-            </StackPanel>
-        </Grid>
+            <Grid Grid.Row="0" >
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="提示" FontSize="20" FontWeight="Medium" />
+                    <TextBlock Name="speedText" Text="提示" FontSize="20" FontWeight="Medium" />
 
-        <Grid Grid.Row="2" Grid.Column="1">
-            <TextBlock VerticalAlignment="Center"> Text</TextBlock>
-            <Grid HorizontalAlignment="Right">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                    <ColumnDefinition Width="auto"/>
-                </Grid.ColumnDefinitions>
-                <Ellipse Grid.Column="0" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
-                <Ellipse Grid.Column="1" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
-                <Ellipse Grid.Column="2" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
-                <Ellipse Grid.Column="3" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
-                <Ellipse Grid.Column="4" Fill="Black" Margin="0,0,5,0" Width="30" Height="30"/>
-                <Ellipse Grid.Column="5" Fill="Beige" Margin="0,0,5,0" Width="30" Height="30"/>
+                </StackPanel>
             </Grid>
+
+            <Grid Grid.Row="1" >
+                <Grid>
+                    <MediaPlayerElement  Grid.Row="1" Grid.Column="0" Name="mediaPlayer" AutoPlay="True" Visibility="Visible" AreTransportControlsEnabled="True">
+                        <MediaPlayerElement.TransportControls>
+                            <local:SuperSimpleMediaTransportControls IsCompact="True"
+                                                    IsZoomButtonVisible="True"
+                                                    IsZoomEnabled="True"
+                                                    IsPlaybackRateButtonVisible="True"
+                                                    IsPlaybackRateEnabled="True"
+                                                    AddPlaybackRated="SuperSimpleMediaTransportControls_AddPlaybackRated"
+                                                    InitPlaybackRated="SuperSimpleMediaTransportControls_InitPlaybackRated"
+                                                    ReducePlaybackRated="SuperSimpleMediaTransportControls_ReducePlaybackRated"
+                                                    >
+                            </local:SuperSimpleMediaTransportControls>
+                        </MediaPlayerElement.TransportControls>
+
+                    </MediaPlayerElement>
+                    
+                </Grid>
+            </Grid>
+
         </Grid>
+
+
+        <!-- 播放列表 -->
+        <Grid Grid.Column="1" Background="CadetBlue">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="9.6*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0">
+                <ListView Name="MItems" ItemsSource="{x:Bind VideoFileInfoList}" ItemClick="MItems_ItemClick"  IsItemClickEnabled="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FilePath}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+            
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="ChooseDirBtn" 
+                            Click="ChooseDirBtn_Click">
+                        <FontIcon FontFamily="Segoe UI Emoji" Glyph="&#x1F4C2;" />
+                    </Button>
+                    <Button x:Name="ChooseFileBtn" 
+                            Click="ChooseFileBtn_Click" >
+                        <FontIcon FontFamily="Segoe UI Emoji" Glyph="&#x2795;" />
+                    </Button>
+                    
+                    <Button x:Name="TestInsertBtn" Click="TestInsertBtn_Click">
+                        <FontIcon FontFamily="Segoe UI Emoji" Glyph="&#x2604;" />
+                    </Button>
+                    <Button x:Name="TestSelectBtn" Click="TestSelectBtn_Click" Content="展示">
+                    </Button>
+
+                    <Button x:Name="TestDelBtn" Click="TestDelBtn_Click" Content="删除">
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            
+
+        </Grid>
+
     </Grid>
 </Page>
